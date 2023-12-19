@@ -17,7 +17,7 @@ namespace VickyFood.Models
 
         [Display(Name = "Long Description")]
         [StringLength(400, ErrorMessage = "Maximum length is 400 characters")]
-        public string ProductLongDescription { get; set; }
+        public string? ProductLongDescription { get; set; }
 
         [Column(TypeName = "decimal(10,2)")]
         [Range(1,999.99, ErrorMessage = "The price must be between 1 and 999.99")]
@@ -25,11 +25,11 @@ namespace VickyFood.Models
 
         [Display(Name = "Image File Path")]
         [StringLength(150, ErrorMessage = "Maximum Length is 150 Characters")]
-        public string UrlImage { get; set; }
+        public string? UrlImage { get; set; }
 
         [Display(Name = "Thumbnail File Path")]
         [StringLength(150, ErrorMessage = "Maximum Length is 150 Characters")]
-        public string UrlThumbnail { get; set; }
+        public string? UrlThumbnail { get; set; }
 
         [Display(Name = "Stock?")]
         public bool ProductStock { get; set; }
