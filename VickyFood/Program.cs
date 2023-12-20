@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using VickyFood.Infrastructure;
+using VickyFood.Models;
 using VickyFood.Repositories;
 using VickyFood.Repositories.Interfaces;
 
@@ -12,8 +13,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sp => Cart.GetCart(sp));
 
-
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 
 // Configure the HTTP request pipeline.
@@ -28,6 +32,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 
