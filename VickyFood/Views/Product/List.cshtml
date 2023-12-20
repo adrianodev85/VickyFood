@@ -1,18 +1,14 @@
-﻿@model IEnumerable<Product>
+﻿@model ProductListViewModel
 
 <div>
-    <h2>All Products</h2>
+    <h2>@Model.CurrentCategory</h2>
 </div>
+<br />
 <div class="container">
     <div class="row">
-        @foreach (var p in Model)
+        @foreach (var p in Model.Products)
         {
-            <div class="card col-sm-4 col-md-4 col-lg-4 text-center">
-                <h3>@p.ProductName</h3>
-                <p><img src="@p.UrlImage" /></p>                
-                <h5>@p.ProductShortDescription</h5>
-                <h4>$ @p.Price.ToString("F2")</h4>
-            </div>
+            <partial name="_ProductOverview" for="@p" />
         }
     </div>
 </div>

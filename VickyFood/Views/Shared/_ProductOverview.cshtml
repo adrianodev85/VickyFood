@@ -1,0 +1,8 @@
+﻿@model Product
+
+<div class="card col-sm-4 col-md-4 col-lg-4 text-center">
+    <h3>@Model.ProductName</h3>
+    <p><img src="@Model.UrlImage" /></p>
+    <h5>@Model.ProductShortDescription</h5>
+    <h4>$ @Model.Price.ToString("F2")</h4>
+</div>
