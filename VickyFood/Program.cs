@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VickyFood.Infrastructure;
 using VickyFood.Models;
@@ -37,6 +38,10 @@ app.UseSession();
 
 app.UseAuthorization();
 
+app.MapControllerRoute(
+    name: "CategoryFilter",
+    pattern: "Product/{action}/{category?}",
+    defaults: new { Controller = "Product", Action = "List" });
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
