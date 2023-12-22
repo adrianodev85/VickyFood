@@ -22,7 +22,7 @@ namespace VickyFood.Models
             //get context service
             var context = services.GetService<AppDbContext>();
             //get or create cart id
-            string cartId = session.GetString("cartId")??Guid.NewGuid().ToString();
+            string cartId = session.GetString("CartId")??Guid.NewGuid().ToString();
             //add id to cart in session
             session.SetString("CartId", cartId);
             //return cart with context and id

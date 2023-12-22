@@ -1,0 +1,29 @@
+﻿@model Product
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card">
+                <div class="text-center">
+                    <img src="@Model.UrlImage" />
+                </div>
+                <div class="card-block text-center">
+                    <h5 class="card-title">@Model.ProductName</h5>
+                    @if (Model.Category.CategoryId == 4)
+                    {
+                        <p class="card-text">@Model.ProductShortDescription</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">@Model.ProductLongDescription</p>
+                    }
+                    <p class="btn btn-group align-content-lg-end">
+                        <a class="btn btn-outline-info" asp-area="" asp-controller="Product" asp-action="List">See All Products</a>
+                        <a class="btn btn-primary" id="cartButton" asp-area="" asp-controller="Cart" asp-action="AddItemToCart"
+                           asp-route-productId="@Model.ProductId">Add @Model.ProductName to Cart</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
