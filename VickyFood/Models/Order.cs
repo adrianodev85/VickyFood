@@ -61,6 +61,6 @@ namespace VickyFood.Models
         public DateTime OrderDelivered { get; set; }
 
 
-        public List<OrderDetail> OrderItems { get; set; }
+        public List<OrderDetail>? OrderItems { get; set; }
     }
 }

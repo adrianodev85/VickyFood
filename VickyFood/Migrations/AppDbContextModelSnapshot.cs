@@ -45,7 +45,7 @@ namespace VickyFood.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("VickyFood.Models.Category", b =>
@@ -66,7 +66,7 @@ namespace VickyFood.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("VickyFood.Models.Order", b =>
@@ -138,7 +138,7 @@ namespace VickyFood.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("VickyFood.Models.OrderDetail", b =>
@@ -167,7 +167,7 @@ namespace VickyFood.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("VickyFood.Models.Product", b =>
@@ -216,7 +216,7 @@ namespace VickyFood.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("VickyFood.Models.CartItem", b =>

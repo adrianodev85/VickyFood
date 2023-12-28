@@ -16,7 +16,7 @@ namespace VickyFood.Models
         public List<CartItem> CartItems { get; set; }
 
         public static Cart GetCart(IServiceProvider services)
-        {
+            {
             //define session
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             //get context service
